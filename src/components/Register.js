@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [form, setForm] = useState({ username: "", password: "" });
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -17,7 +17,7 @@ function Register() {
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Registration successful!");
-    useNavigate("/login");
+    navigate("/login");
 
     // if (existingUser) {
     //   alert("Username already exists!");
